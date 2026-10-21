@@ -156,7 +156,7 @@ footer p{margin:6px 0}
 </main>
 
 <footer><div class="wrap">
-  <p>📲 WhatsApp: <b>79730 01863</b> · ✉️ <b>Kredsoftcareers@gmail.com</b></p>
+  <p>📲 WhatsApp: <b>79730 01863</b> · ✉️ <b>careers@kredsoftz.in</b></p>
   <p>❌ No calls please · Shortlisted candidates will be called · We never charge any fee</p>
   <div class="sign">— Team KredSoft Careers</div>
   <p>A <a href="https://kredsoftz.in">Kredsoftz</a> venture · Mohali, Punjab</p>
@@ -171,7 +171,7 @@ function missing(){const m=[];[['name','Name'],['loc','Location'],['org','Organi
 function update(){
   const msg=message();
   $('send').href='https://wa.me/917973001863?text='+encodeURIComponent(msg);
-  $('mail').href='mailto:Kredsoftcareers@gmail.com?subject='+encodeURIComponent('Application – '+($('role').value||'Role')+' – '+($('loc').value.trim()||'Location'))+'&body='+encodeURIComponent(msg);
+  $('mail').href='mailto:careers@kredsoftz.in?subject='+encodeURIComponent('Application – '+($('role').value||'Role')+' – '+($('loc').value.trim()||'Location'))+'&body='+encodeURIComponent(msg);
   if(!missing().length)$('err').hidden=true;
 }
 document.querySelectorAll('#f input,#f select').forEach(el=>{el.addEventListener('input',update);el.addEventListener('change',update)});
