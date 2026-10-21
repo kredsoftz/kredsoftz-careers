@@ -84,12 +84,23 @@ footer .sign{font-family:var(--display);color:var(--gold-soft);font-size:18px;fo
 footer p{margin:6px 0}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--gold-soft);border:1.5px solid var(--gold);padding:10px 16px;border-radius:12px;font-weight:700;font-size:14px;z-index:10}
 @media (max-width:480px){header img{height:52px}header nav a:not(.cta){display:none}}
+.about{background:var(--paper);color:var(--ink)}
+.about h2 em{color:#9A6F07}
+.about .lead{color:#4C6B5E;max-width:62ch}
+.mission{font-family:var(--display);font-weight:700;font-size:clamp(20px,4.2vw,26px);line-height:1.35;margin:18px 0 22px;padding-left:16px;border-left:4px solid var(--gold);color:var(--ink);max-width:40ch}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.pillar{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px;min-width:0}
+.pillar .ic{width:40px;height:40px;border-radius:12px;background:var(--ink);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:20px}
+.pillar b{display:block;font-size:16px;margin-top:10px}
+.pillar p{margin:4px 0 0;color:#4C6B5E;font-size:14px}
+.promise{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.promise span{font-size:13px;font-weight:800;letter-spacing:.04em;background:var(--ink);color:var(--gold-soft);padding:7px 12px;border-radius:999px}
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <img src="logo.png" alt="KredSoft Careers">
-  <nav><a href="#openings">Openings</a><a href="#apply" class="cta">Apply now</a></nav>
+  <nav><a href="#about">About</a><a href="#openings">Openings</a><a href="#apply" class="cta">Apply now</a></nav>
 </div></header>
 
 <main>
@@ -100,6 +111,20 @@ footer p{margin:6px 0}
   <div class="towns"><span class="town">📍 Patiala</span><span class="town">📍 Ludhiana</span><span class="town">📍 Zirakpur</span><span class="town">📍 Karnal</span><span class="town">📍 Hisar</span></div>
   <div class="alert">⏰ Interviews: 21–23 October · On call</div>
   <div class="hero-actions"><a class="btn gold" href="#apply">Apply in 30 seconds</a><a class="btn ghost" href="#openings">See openings</a></div>
+</div></section>
+
+<section id="about" class="about"><div class="wrap">
+  <span class="eyebrow">Who we are</span>
+  <h2 style="margin-top:12px">Built by bankers, <em>for bankers.</em></h2>
+  <p class="lead">KredSoft Careers is a career platform for Bank &amp; NBFC professionals across Punjab &amp; Haryana. Our team has spent years inside branches, credit desks and sales teams, so we know what a good opportunity looks like, and how hard it can be to find one.</p>
+  <p class="mission">Our mission: help every banking professional in our region find the role they deserve.</p>
+  <div class="pillars">
+    <div class="pillar"><div class="ic">🎯</div><b>Roles that fit you</b><p>Sales, credit, collections, operations and branch banking, matched to your product and experience.</p></div>
+    <div class="pillar"><div class="ic">🤝</div><b>Insider understanding</b><p>We speak your language: LAP, gold loan, DSA, sanction, disbursal. Your profile is read by people who get it.</p></div>
+    <div class="pillar"><div class="ic">📈</div><b>Growth, not just a job</b><p>From officer to branch manager to cluster head, we help you take the next real step.</p></div>
+    <div class="pillar"><div class="ic">🔒</div><b>Private &amp; respectful</b><p>Your details stay confidential and are shared only with your consent.</p></div>
+  </div>
+  <div class="promise"><span>✓ 100% free for candidates</span><span>✓ Private &amp; secure</span></div>
 </div></section>
 
 <section id="openings"><div class="wrap">
@@ -159,7 +184,7 @@ footer p{margin:6px 0}
   <p>📲 WhatsApp: <b>79730 01863</b> · ✉️ <b>careers@kredsoftz.in</b></p>
   <p>❌ No calls please · Shortlisted candidates will be called · We never charge any fee</p>
   <div class="sign">— Team KredSoft Careers</div>
-  <p>A <a href="https://kredsoftz.in">Kredsoftz</a> venture · Mohali, Punjab</p>
+  <p>A <a href="https://kredsoftz.in">Kredsoftz</a> venture</p>
 </div></footer>
 <div class="toast" id="toast" hidden></div>
 
