@@ -1,0 +1,49 @@
+:root{--bg:#0A3A2A;--deep:#06261C;--paper:#FFFDF6;--ink:#0A3A2A;--ink-soft:#4C6B5E;--gold:#E3A922;--gold-soft:#F5D46A;--line:#D9C48A;--wa:#1FA855;--on:#EAF3EE;--muted:#BFD8CB;
+--display:"Fraunces",Georgia,serif;--body:"Manrope","Segoe UI",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1000px 700px at 50% -10%,#0F5A40,var(--bg) 50%,var(--deep));color:var(--on);font-family:var(--body);font-size:16px;line-height:1.6;min-height:100vh}
+a{color:var(--gold-soft)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{background:#fff;border-bottom:4px solid var(--gold)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+header.top img{height:56px;display:block}
+header.top nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+header.top nav a{text-decoration:none;color:var(--ink);font-weight:800;font-size:14px;padding:7px 12px;border-radius:999px;border:2px solid var(--line)}
+header.top nav a.cta{background:var(--ink);color:var(--gold-soft);border-color:var(--ink)}
+@media (max-width:520px){header.top nav a:not(.cta){display:none}}
+section{padding-block:28px}
+.eyebrow{display:inline-block;background:linear-gradient(90deg,#B8860B,var(--gold-soft) 50%,#B8860B);color:var(--ink);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,6.5vw,48px);line-height:1.08;margin:14px 0 10px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,5vw,32px);line-height:1.15;margin:0 0 8px;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--gold-soft)}
+h3{font-size:18px;margin:18px 0 6px}
+.lead{color:var(--muted);font-size:17px;max-width:62ch;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font:inherit;font-weight:800;font-size:15px;border-radius:12px;padding:12px 18px;border:2px solid transparent;cursor:pointer}
+.btn.gold{background:linear-gradient(90deg,#C9930E,var(--gold-soft));color:var(--ink)}
+.btn.ghost{background:transparent;border-color:rgba(245,212,106,.6);color:var(--gold-soft)}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.ink{background:var(--ink);color:var(--gold-soft)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.paper{background:var(--paper);color:var(--ink)}
+.paper .lead{color:var(--ink-soft)}
+.paper h2 em{color:#9A6F07}
+.doc{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px 20px;box-shadow:0 0 0 3px var(--gold)}
+.doc h2{font-size:22px;margin-top:22px}
+.doc p,.doc li{color:#2E4A3F;font-size:15.5px}
+.doc a{color:#7A5806;font-weight:700}
+.meta{font-size:13.5px;color:var(--muted)}
+/* footer */
+footer.site{border-top:1px solid rgba(245,212,106,.25);margin-top:24px;padding-block:28px 40px;font-size:14px;color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:20px}
+.fgrid h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 10px}
+.fgrid a{display:block;color:var(--on);text-decoration:none;margin:6px 0}
+.fgrid a:hover{color:var(--gold-soft)}
+.fbrand b{font-family:var(--display);font-size:20px;color:#fff}
+.fbrand p{margin:6px 0}
+.fbottom{margin-top:20px;padding-top:14px;border-top:1px solid rgba(245,212,106,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:640px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
+.scrollnav{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;z-index:20}
+.scrollnav button{width:44px;height:44px;border-radius:50%;border:2px solid #E3A922;background:#0A3A2A;color:#F5D46A;font-size:16px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.35);transition:opacity .2s}
+.scrollnav button.hide{opacity:0;pointer-events:none}
+@media print{.scrollnav,header.top,footer.site,.noprint{display:none!important}}

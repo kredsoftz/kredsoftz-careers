@@ -79,7 +79,7 @@ input::placeholder{color:#9AAFA5}
 .community .t{flex:1;min-width:200px}
 .community h3{margin:0;font-family:var(--display);font-size:24px}
 .community p{margin:6px 0 12px;color:var(--ink-soft);font-size:14.5px}
-footer{border-top:1px solid rgba(245,212,106,.25);padding-block:22px 34px;text-align:center;color:var(--muted);font-size:13.5px}
+footer:not(.site){border-top:1px solid rgba(245,212,106,.25);padding-block:22px 34px;text-align:center;color:var(--muted);font-size:13.5px}
 footer .sign{font-family:var(--display);color:var(--gold-soft);font-size:18px;font-weight:700;margin-top:6px}
 footer p{margin:6px 0}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--gold-soft);border:1.5px solid var(--gold);padding:10px 16px;border-radius:12px;font-weight:700;font-size:14px;z-index:10}
@@ -169,15 +169,32 @@ footer p{margin:6px 0}
 .how3 b{display:block;font-size:14px}
 .how3 small{font-size:12px;color:var(--ink-soft)}
 @media (max-width:480px){.how3{grid-template-columns:1fr}}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tool{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border-radius:18px;padding:16px;box-shadow:0 0 0 2px var(--gold)}
+.tool span{font-size:26px}
+.tool b{display:block;font-size:17px;margin-top:4px}
+.tool small{color:var(--ink-soft);font-size:13.5px}
+.tool:hover{transform:translateY(-2px)}
 .cta-box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(245,212,106,.2),rgba(245,212,106,.05));border:1.5px solid var(--gold);border-radius:20px;padding:20px}
 .cta-box>div{flex:1;min-width:220px}
 @media (max-width:480px){.stats b{font-size:28px}}
+/* footer */
+footer.site{border-top:1px solid rgba(245,212,106,.25);margin-top:24px;padding-block:28px 40px;font-size:14px;color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:20px}
+.fgrid h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 10px}
+.fgrid a{display:block;color:var(--on);text-decoration:none;margin:6px 0}
+.fgrid a:hover{color:var(--gold-soft)}
+.fbrand b{font-family:var(--display);font-size:20px;color:#fff}
+.fbrand p{margin:6px 0}
+.fbottom{margin-top:20px;padding-top:14px;border-top:1px solid rgba(245,212,106,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:640px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
+
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <a href="./"><img src="logo.png" alt="KredSoft Careers"></a>
-  <nav><a href="#jobs">Jobs</a><a href="#guide">Career guide</a><a href="#about">About</a><a href="apply" class="cta">Apply</a></nav>
+  <nav><a href="learn">Learn</a><a href="resume">Resume builder</a><a href="#jobs">Jobs</a><a href="apply" class="cta">Apply</a></nav>
 </div></header>
 
 <main>
@@ -190,7 +207,7 @@ footer p{margin:6px 0}
     <span class="pill">📅 Next drive: November</span>
     <span class="pill">👥 Community growing every day</span>
   </div>
-  <div class="hero-actions"><a class="btn gold" href="apply">Apply in 30 seconds</a><a class="btn ghost" href="#community">Join the community</a></div>
+  <div class="hero-actions"><a class="btn gold" href="apply">Apply in 30 seconds</a><a class="btn ghost" href="resume">Build free resume</a><a class="btn ghost" href="learn">Learn BFSI basics</a></div>
 </div></section>
 
 <section id="drive"><div class="wrap">
@@ -215,6 +232,14 @@ footer p{margin:6px 0}
       </div>
     </details>
     <p class="next">Missed this one? <b>Register now for the November drive</b>. We'll reach out when it opens. <a href="apply">Register interest →</a></p>
+  </div>
+</div></section>
+
+<section id="tools"><div class="wrap">
+  <div class="tools">
+    <a class="tool" href="learn"><span>📚</span><b>Learn BFSI</b><small>Banking, loans, credit, insurance &amp; careers in simple words</small></a>
+    <a class="tool" href="resume"><span>📄</span><b>Free resume builder</b><small>Selfie + signature + PDF in 5 minutes, private on your phone</small></a>
+    <a class="tool" href="apply"><span>⚡</span><b>Quick apply</b><small>6 details, CV optional, sent on WhatsApp</small></a>
   </div>
 </div></section>
 
@@ -329,7 +354,8 @@ footer p{margin:6px 0}
   </div>
 </div></section>
 <section id="legal"><div class="wrap">
-  <details class="legal"><summary>Privacy, disclaimer &amp; terms</summary>
+  <details class="legal"><summary>Privacy, disclaimer &amp; terms (summary)</summary>
+  <p>Read the full <a href="privacy">Privacy Policy</a> and <a href="terms">Terms of Use</a>.</p>
   <h3>Privacy notice</h3>
   <p><b>What we collect:</b> only what you choose to send us on WhatsApp or email: name, location, current organisation, experience, product, role applied for, and your CV if you attach one.</p>
   <p><b>Why:</b> only to match you with suitable job openings and to contact you about them. We share your profile with an employer only after you agree.</p>
@@ -345,13 +371,16 @@ footer p{margin:6px 0}
 </div></section>
 </main>
 
-<footer><div class="wrap">
-  <p>📲 WhatsApp: <b>79730 01863</b> · ✉️ <b>careers@kredsoftz.in</b></p>
-  <p>❌ No calls please · Shortlisted candidates will be called · We never charge any fee</p>
-  <div class="sign">— Team KredSoft Careers</div>
-  <p><a href="#legal">Privacy, disclaimer &amp; terms</a></p>
-  <p>A <a href="https://kredsoftz.in">Kredsoftz</a> venture</p>
+<footer class="site"><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand"><b>KredSoft Careers</b><p>Free career hub for Banking, NBFC &amp; Insurance professionals in Punjab &amp; Haryana.</p><p>✉️ careers@kredsoftz.in · 📲 79730 01863</p></div>
+    <div><h4>Programs</h4><a href="learn#banking">Banking basics</a><a href="learn#loans">Loans &amp; credit</a><a href="learn#insurance">Insurance &amp; wealth</a><a href="learn#careers">Career scope</a></div>
+    <div><h4>Company</h4><a href="./#about">About us</a><a href="./#upcoming">Our vision</a><a href="mailto:careers@kredsoftz.in?subject=Hiring%20partnership">Partner with us / Hire talent</a><a href="resume">Resume builder</a></div>
+    <div><h4>Support</h4><a href="./#faq">FAQ</a><a href="mailto:careers@kredsoftz.in">Contact us</a><a href="privacy">Privacy Policy</a><a href="terms">Terms of Use</a></div>
+  </div>
+  <div class="fbottom"><span>© <span class="yr">2026</span> KredSoft Careers · A <a href="https://kredsoftz.in">Kredsoftz</a> venture</span><span>We never charge candidates any fee.</span></div>
 </div></footer>
+
 
 
 
