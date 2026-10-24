@@ -154,6 +154,21 @@ footer p{margin:6px 0}
 .legal summary{cursor:pointer;font-weight:800;color:var(--gold-soft)}
 .legal h3{font-size:15px;color:var(--on-dark);margin:16px 0 4px}
 .legal p{margin:4px 0}
+.board{margin-top:16px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1.5px solid rgba(245,212,106,.45);border-radius:20px;padding:18px}
+.bhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bhead b{font-size:16px}
+.bnext{margin-left:auto;font-size:13px;font-weight:800;color:var(--ink);background:var(--gold-soft);padding:5px 10px;border-radius:999px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.cat{position:relative;background:rgba(255,255,255,.05);border:1.5px dashed rgba(245,212,106,.4);border-radius:14px;padding:14px;min-width:0}
+.cat .ci{font-size:24px}
+.cat b{display:block;font-size:17px;margin-top:4px}
+.cat small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+.soon{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);border:1.5px solid rgba(245,212,106,.5);padding:3px 8px;border-radius:999px}
+.how3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.how3 div{background:var(--paper);color:var(--ink);border-radius:12px;padding:10px;text-align:center}
+.how3 b{display:block;font-size:14px}
+.how3 small{font-size:12px;color:var(--ink-soft)}
+@media (max-width:480px){.how3{grid-template-columns:1fr}}
 .cta-box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(245,212,106,.2),rgba(245,212,106,.05));border:1.5px solid var(--gold);border-radius:20px;padding:20px}
 .cta-box>div{flex:1;min-width:220px}
 @media (max-width:480px){.stats b{font-size:28px}}
@@ -162,14 +177,14 @@ footer p{margin:6px 0}
 <body>
 <header><div class="wrap">
   <a href="./"><img src="logo.png" alt="KredSoft Careers"></a>
-  <nav><a href="#jobs">Job board</a><a href="#guide">Career guide</a><a href="#about">About</a><a href="apply" class="cta">Apply</a></nav>
+  <nav><a href="#jobs">Jobs</a><a href="#guide">Career guide</a><a href="#about">About</a><a href="apply" class="cta">Apply</a></nav>
 </div></header>
 
 <main>
 <section class="hero"><div class="wrap">
   <span class="eyebrow">BFSI career hub · Punjab &amp; Haryana</span>
   <h1>Your next move in <em>Banking, NBFC &amp; Insurance</em> starts here.</h1>
-  <p class="lead">Hiring drives, fresh openings we track across job portals, and practical interview prep, all in one place and free for candidates.</p>
+  <p class="lead">Hiring drives, verified job updates and practical interview prep, all in one place and free for candidates.</p>
   <div class="live">
     <span class="pill"><i class="dot"></i>Final interviews underway · NBFC sales drive</span>
     <span class="pill">📅 Next drive: November</span>
@@ -205,26 +220,23 @@ footer p{margin:6px 0}
 
 <section id="jobs"><div class="wrap">
   <span class="eyebrow">Job board</span>
-  <h2 style="margin-top:12px">Fresh openings <em>we're tracking</em></h2>
-  <p class="lead">Our team manually reviews publicly advertised BFSI openings in Punjab &amp; Haryana and lists the basic facts here. To apply, visit the employer's official website (Careers section) or search the role on a job portal of your choice.</p>
-  <div class="filters" role="group" aria-label="Filter jobs">
-    <button class="f on" data-f="all">All</button><button class="f" data-f="bank">Bank</button><button class="f" data-f="nbfc">NBFC</button><button class="f" data-f="ins">Insurance</button>
-  </div>
-  <div class="jobs" id="joblist">
-    <div class="job" data-c="bank"><span class="jt">Branch Manager</span><span class="jc">CSB Bank · Ludhiana</span><span class="jb bank">Bank</span><a class="jl" href="https://www.csb.co.in" target="_blank" rel="noopener nofollow">Official website of CSB Bank →</a></div>
-    <div class="job" data-c="bank"><span class="jt">Branch Manager</span><span class="jc">CSB Bank · Patiala</span><span class="jb bank">Bank</span><a class="jl" href="https://www.csb.co.in" target="_blank" rel="noopener nofollow">Official website of CSB Bank →</a></div>
-    <div class="job" data-c="bank"><span class="jt">Relationship Manager – HL / LAP</span><span class="jc">RBL Bank · Khanna</span><span class="jb bank">Bank</span><a class="jl" href="https://rbl.bank.in/careers" target="_blank" rel="noopener nofollow">Official website of RBL Bank →</a></div>
-    <div class="job" data-c="bank"><span class="jt">Credit Manager – LAP</span><span class="jc">Kotak Mahindra Bank · Karnal</span><span class="jb bank">Bank</span><a class="jl" href="https://www.kotak.com" target="_blank" rel="noopener nofollow">Official website of Kotak Mahindra Bank →</a></div>
-    <div class="job" data-c="bank"><span class="jt">RM – Tractor &amp; Crop Finance</span><span class="jc">Kotak Mahindra Bank · Karnal</span><span class="jb bank">Bank</span><a class="jl" href="https://www.kotak.com" target="_blank" rel="noopener nofollow">Official website of Kotak Mahindra Bank →</a></div>
-    <div class="job" data-c="bank"><span class="jt">Key Relationship Manager – Used CV</span><span class="jc">Equitas Small Finance Bank · Karnal</span><span class="jb bank">Bank</span><a class="jl" href="https://www.equitasbank.com" target="_blank" rel="noopener nofollow">Official website of Equitas Small Finance Bank →</a></div>
-    <div class="job" data-c="nbfc"><span class="jt">RM – Commercial Vehicle</span><span class="jc">Tata Capital · Ludhiana</span><span class="jb nbfc">NBFC</span><a class="jl" href="https://www.tatacapital.com" target="_blank" rel="noopener nofollow">Official website of Tata Capital →</a></div>
-    <div class="job" data-c="nbfc"><span class="jt">Branch Manager</span><span class="jc">Muthoot Fincorp · Karnal</span><span class="jb nbfc">NBFC</span><a class="jl" href="https://www.muthoot.com/careers" target="_blank" rel="noopener nofollow">Official website of Muthoot Fincorp →</a></div>
-    <div class="job" data-c="nbfc"><span class="jt">Area Sales Manager – Microfinance</span><span class="jc">Tata Capital · Karnal</span><span class="jb nbfc">NBFC</span><a class="jl" href="https://www.tatacapital.com" target="_blank" rel="noopener nofollow">Official website of Tata Capital →</a></div>
-    <div class="job" data-c="nbfc"><span class="jt">Sales Manager</span><span class="jc">Bajaj Finance · Kharar (Mohali)</span><span class="jb nbfc">NBFC</span><a class="jl" href="https://www.bajajfinserv.in" target="_blank" rel="noopener nofollow">Official website of Bajaj Finance →</a></div>
-    <div class="job" data-c="ins"><span class="jt">Senior Bancassurance Manager</span><span class="jc">HDFC Life · Patiala</span><span class="jb ins">Insurance</span><a class="jl" href="https://www.hdfclife.com" target="_blank" rel="noopener nofollow">Official website of HDFC Life →</a></div>
-    <div class="job" data-c="ins"><span class="jt">Corporate Agency Manager – SFB</span><span class="jc">HDFC Life · Ludhiana</span><span class="jb ins">Insurance</span><a class="jl" href="https://www.hdfclife.com" target="_blank" rel="noopener nofollow">Official website of HDFC Life →</a></div>
+  <h2 style="margin-top:12px">Verified openings, <em>updating soon</em></h2>
+  <p class="lead">We're building a job board you can trust. Every opening will be checked with the employer or its official careers page before it appears here. No fake, expired or copied listings.</p>
+  <div class="board">
+    <div class="bhead"><span class="dot"></span><b>Verification in progress</b><span class="bnext">First update: November</span></div>
+    <div class="cats">
+      <div class="cat"><span class="ci">🏦</span><b>Bank jobs</b><small>Branch banking · CASA · Retail assets · Credit</small><span class="soon">Coming soon</span></div>
+      <div class="cat"><span class="ci">💼</span><b>NBFC jobs</b><small>LAP · Gold loan · MSME · Vehicle · Microfinance</small><span class="soon">Coming soon</span></div>
+      <div class="cat"><span class="ci">🛡️</span><b>Insurance jobs</b><small>Bancassurance · Agency · Partnerships</small><span class="soon">Coming soon</span></div>
     </div>
-  <p class="disc"><b>Please note:</b> Openings were seen in public advertisements around 20 Oct 2026 and may have closed. KredSoft Careers is not the employer or recruiter for these roles, is not affiliated with or endorsed by these companies, and does not guarantee any job. Company names are trademarks of their respective owners and are used only to identify the employer. Always verify details on the employer's official website. <b>We never charge any fee.</b> If you are an employer and want a listing changed or removed, email careers@kredsoftz.in and we will act within 48 hours.</p>
+    <div class="how3">
+      <div><b>1. Sourced</b><small>From employers &amp; official careers pages</small></div>
+      <div><b>2. Verified</b><small>Role, location &amp; status confirmed</small></div>
+      <div><b>3. Shared</b><small>Here and in our WhatsApp community first</small></div>
+    </div>
+  </div>
+  <div class="hero-actions"><a class="btn wa" href="https://chat.whatsapp.com/Fb1T2H6LpyWBcrsAmS7AAK" target="_blank" rel="noopener">Get alerts first on WhatsApp</a><a class="btn ghost" href="apply">Register your profile</a></div>
+  <p class="disc"><b>Employers:</b> list your BFSI openings in Punjab &amp; Haryana with us free of charge. Write to careers@kredsoftz.in.</p>
 </div></section>
 
 <section id="guide" class="guide"><div class="wrap">
@@ -302,7 +314,7 @@ footer p{margin:6px 0}
   <h2>Get <em>job updates</em> first</h2>
   <div class="community">
     <img src="data:image/png;base64,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" alt="QR code to join the KredSoft Careers WhatsApp community">
-    <div class="t"><h3>KredSoft Careers Community</h3><p>Bank, NBFC &amp; Insurance openings across Punjab &amp; Haryana. Free and private: members can't see each other.</p>
+    <div class="t"><h3>KredSoft Careers Community</h3><p>Be the first to hear about verified Bank, NBFC &amp; Insurance openings across Punjab &amp; Haryana. Free and private: members can't see each other.</p>
       <a class="btn wa" href="https://chat.whatsapp.com/Fb1T2H6LpyWBcrsAmS7AAK" target="_blank" rel="noopener">Join on WhatsApp</a></div>
   </div>
 </div></section>
@@ -340,12 +352,29 @@ footer p{margin:6px 0}
   <p><a href="#legal">Privacy, disclaimer &amp; terms</a></p>
   <p>A <a href="https://kredsoftz.in">Kredsoftz</a> venture</p>
 </div></footer>
-<script>
-document.querySelectorAll('.f').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.f').forEach(x=>x.classList.toggle('on',x===b));
-  const f=b.dataset.f;document.querySelectorAll('#joblist .job').forEach(j=>{j.hidden=!(f==='all'||j.dataset.c===f)});
-}));
-</script>
 
+
+
+<div class="scrollnav" aria-label="Page scroll">
+  <button type="button" id="toTop" aria-label="Scroll to top" title="Top">&#9650;</button>
+  <button type="button" id="toBottom" aria-label="Scroll to bottom" title="Bottom">&#9660;</button>
+</div>
+<style>
+.scrollnav{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;z-index:20}
+.scrollnav button{width:44px;height:44px;border-radius:50%;border:2px solid #E3A922;background:#0A3A2A;color:#F5D46A;font-size:16px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.35);transition:opacity .2s,transform .2s}
+.scrollnav button:hover{transform:translateY(-2px)}
+.scrollnav button:focus-visible{outline:3px solid #F5D46A;outline-offset:2px}
+.scrollnav button.hide{opacity:0;pointer-events:none}
+</style>
+<script>
+(function(){
+  var up=document.getElementById('toTop'),dn=document.getElementById('toBottom');
+  function upd(){var y=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+    up.classList.toggle('hide',y<300);dn.classList.toggle('hide',y>max-300);}
+  up.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  dn.addEventListener('click',function(){window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})});
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+})();
+</script>
 </body>
 </html>
