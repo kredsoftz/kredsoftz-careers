@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Resume Builder | KredSoft Careers</title>
+<meta name="description" content="Build a professional BFSI resume in 5 minutes with photo and signature. Free, private: nothing leaves your phone.">
+<meta property="og:title" content="Free Resume Builder | KredSoft Careers">
+<meta property="og:description" content="Build a professional BFSI resume in 5 minutes with photo and signature. Free, private: nothing leaves your phone.">
+<meta property="og:image" content="https://careers.kredsoftz.in/logo.png">
+<meta name="theme-color" content="#0A3A2A">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap">
+<link rel="stylesheet" href="site.css">
+
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="./"><img src="logo.png" alt="KredSoft Careers"></a>
+  <nav><a href="learn">Learn</a><a href="resume">Resume builder</a><a href="./#jobs">Jobs</a><a href="apply" class="cta">Apply</a></nav>
+</div></header>
+<main>
+
+<style>
+.rb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:20px;align-items:start}
+@media (max-width:900px){.rb{grid-template-columns:minmax(0,1fr)}}
+.panel,.sheetwrap{min-width:0}
+.panel{background:var(--paper);color:var(--ink);border-radius:18px;padding:18px;box-shadow:0 0 0 3px var(--gold)}
+.panel h3{margin:18px 0 8px;font-size:16px;display:flex;align-items:center;gap:8px}
+.panel h3:first-child{margin-top:0}
+.panel h3 .n{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--gold-soft);font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+.panel label{display:block;font-size:13px;font-weight:800;margin:8px 0 4px}
+.panel input,.panel textarea,.panel select{width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:10px;padding:10px 12px}
+.panel textarea{min-height:76px;resize:vertical}
+.hint{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+.block{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;margin-top:10px;position:relative;background:#fff}
+.block .x{position:absolute;top:6px;right:8px;border:none;background:none;font-size:18px;cursor:pointer;color:#a33}
+.add{margin-top:8px;border:2px dashed var(--ink);background:none;color:var(--ink);font:inherit;font-weight:800;border-radius:10px;padding:8px 12px;cursor:pointer;width:100%}
+.media{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mbox{border:2px dashed var(--line);border-radius:12px;padding:10px;text-align:center;background:#fff}
+.mbox .pv{height:96px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.mbox .pv img{max-height:96px;max-width:100%;border-radius:8px}
+.mbtn{display:block;width:100%;margin-top:6px;font:inherit;font-weight:800;font-size:13px;padding:8px;border-radius:9px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+.mbtn.p{background:var(--ink);color:var(--gold-soft)}
+.mbtn input{display:none}
+.padwrap{display:none;margin-top:10px}
+.padwrap.on{display:block}
+#pad{width:100%;height:160px;background:#fff;border:2px solid var(--ink);border-radius:10px;touch-action:none}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.priv{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+.tpl{display:flex;gap:8px;flex-wrap:wrap}
+.tpl button{font:inherit;font-weight:800;font-size:13px;padding:7px 12px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.tpl button.on{background:var(--ink);color:var(--gold-soft);border-color:var(--ink)}
+/* resume preview */
+.sheetwrap{position:sticky;top:12px}
+.sheetwrap .lbl{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--gold-soft);text-transform:uppercase;margin-bottom:6px}
+#sheet{background:#fff;color:#1d2a26;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.4);aspect-ratio:210/297;overflow:hidden;font-family:"Manrope",Arial,sans-serif;--ac:#0A3A2A;--ac2:#B8860B}
+#sheet .in{transform-origin:top left}
+.cv{width:794px;min-height:1123px;padding:0;font-size:13px;line-height:1.45;display:flex;flex-direction:column}
+.cv .bd{flex:1}
+.cv .hd{display:flex;gap:20px;align-items:center;background:var(--ac);color:#fff;padding:28px 36px}
+.cv .ph{width:104px;height:104px;border-radius:50%;object-fit:cover;border:3px solid var(--ac2);background:#ffffff22;flex-shrink:0}
+.cv .nm{font-family:"Fraunces",Georgia,serif;font-size:32px;font-weight:800;line-height:1.1}
+.cv .rl{color:#F5D46A;font-weight:700;font-size:15px;margin-top:4px}
+.cv .ct{font-size:12px;margin-top:8px;opacity:.95;display:flex;flex-wrap:wrap;gap:4px 14px}
+.cv .bd{display:grid;grid-template-columns:240px 1fr}
+.cv .sd{background:#F4F1E6;padding:22px 22px 30px}
+.cv .mn{padding:22px 32px 30px}
+.cv h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);border-bottom:2px solid var(--ac2);padding-bottom:4px;margin:18px 0 8px}
+.cv h4:first-child{margin-top:0}
+.cv .tags span{display:inline-block;background:#fff;border:1px solid #d9cfae;border-radius:999px;padding:2px 9px;margin:0 4px 5px 0;font-size:11.5px}
+.cv .job{margin-bottom:12px}
+.cv .job b{font-size:14px;color:var(--ac)}
+.cv .job .m{font-size:12px;color:#5b6b64}
+.cv .job ul{margin:4px 0 0;padding-left:16px}
+.cv .kv{font-size:12px;margin:3px 0}
+.cv .kv b{color:var(--ac)}
+.cv .decl{margin-top:16px;font-size:11.5px;color:#4a5a54}
+.cv .sig{display:flex;justify-content:space-between;align-items:flex-end;margin-top:10px}
+.cv .sig img{max-height:56px;max-width:180px}
+.cv .sig .pl{font-size:12px}
+.cv.t-blue{--ac:#16325C;--ac2:#3B82C4}.cv.t-maroon{--ac:#5B1A2A;--ac2:#C8963E}
+.cv .empty{color:#9aa7a1;font-style:italic}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff!important}
+  main>section>.wrap>*:not(.rb){display:none!important}
+  html,body{margin:0!important;padding:0!important}
+  section{padding:0!important}.wrap{padding:0!important;max-width:none!important}.rb{margin:0!important}.sheetwrap{position:static}
+  .rb{display:block}.panel,.sheetwrap .lbl,.noprint{display:none!important}
+  #sheet{box-shadow:none;border-radius:0;aspect-ratio:auto;width:210mm;height:296mm;overflow:hidden}
+  #sheet .in{transform:none!important}
+  .cv{width:210mm;min-height:296mm;height:296mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+
+<section><div class="wrap">
+  <span class="eyebrow noprint">Free resume builder</span>
+  <h1 class="noprint">A professional resume <em>in 5 minutes.</em></h1>
+  <p class="lead noprint">Fill your details, add a selfie and your signature, and download a clean PDF, right from your phone. Everything stays on your device; nothing is uploaded to us.</p>
+
+  <div class="rb" style="margin-top:20px">
+  <form class="panel" id="f" autocomplete="on" onsubmit="return false">
+    <h3><span class="n">1</span>Basic details</h3>
+    <div class="row2"><div><label for="name">Full name</label><input id="name" placeholder="e.g. Harpreet Kaur"></div><div><label for="role">Current / target role</label><input id="role" placeholder="e.g. Relationship Officer – LAP"></div></div>
+    <div class="row2"><div><label for="phone">Mobile</label><input id="phone" inputmode="tel" placeholder="98XXXXXXXX"></div><div><label for="email">Email</label><input id="email" type="email" placeholder="name@gmail.com"></div></div>
+    <div class="row2"><div><label for="loc">City</label><input id="loc" placeholder="e.g. Ludhiana, Punjab"></div><div><label for="exp">Total experience</label><input id="exp" placeholder="e.g. 4 years"></div></div>
+    <label for="summary">Profile summary</label><textarea id="summary" placeholder="2–3 lines: your product, market, strengths and best numbers."></textarea>
+    <div class="hint">Example: "LAP sales professional with 4 years in Ludhiana; ₹2 Cr+ monthly disbursal with a network of 15 active DSAs."</div>
+
+    <h3><span class="n">2</span>Work experience</h3>
+    <div id="jobs"></div><button type="button" class="add" id="addJob">+ Add job</button>
+
+    <h3><span class="n">3</span>Education</h3>
+    <div id="edus"></div><button type="button" class="add" id="addEdu">+ Add qualification</button>
+
+    <h3><span class="n">4</span>Skills &amp; more</h3>
+    <label for="skills">Key skills (comma separated)</label><input id="skills" placeholder="LAP sourcing, DSA management, Credit appraisal, Cross-selling">
+    <label for="products">Products handled</label><input id="products" placeholder="LAP, Home Loan, Gold Loan">
+    <div class="row2"><div><label for="langs">Languages</label><input id="langs" placeholder="Punjabi, Hindi, English"></div><div><label for="notice">Notice period</label><input id="notice" placeholder="e.g. 30 days"></div></div>
+    <div class="row2"><div><label for="ctc">Current CTC (optional)</label><input id="ctc" placeholder="e.g. ₹4.2 LPA"></div><div><label for="dob">Date of birth (optional)</label><input id="dob" placeholder="DD-MM-YYYY"></div></div>
+
+    <h3><span class="n">5</span>Photo &amp; signature</h3>
+    <div class="media">
+      <div class="mbox"><div class="pv" id="phpv">🙂</div>
+        <label class="mbtn p">📸 Take selfie<input type="file" accept="image/*" capture="user" id="phCam"></label>
+        <label class="mbtn">🖼️ Upload photo<input type="file" accept="image/*" id="phUp"></label>
+        <button type="button" class="mbtn" id="phDel">Remove</button></div>
+      <div class="mbox"><div class="pv" id="sgpv">✍️</div>
+        <button type="button" class="mbtn p" id="sgDraw">✍️ Sign on screen</button>
+        <label class="mbtn">📷 Scan signature on paper<input type="file" accept="image/*" capture="environment" id="sgCam"></label>
+        <button type="button" class="mbtn" id="sgDel">Remove</button></div>
+    </div>
+    <div class="hint">Scanning tip: sign in dark ink on plain white paper, and photograph it in good light. We remove the white background automatically.</div>
+    <div class="padwrap" id="padwrap"><canvas id="pad"></canvas><div class="actions"><button type="button" class="mbtn p" id="padOk" style="width:auto">Use signature</button><button type="button" class="mbtn" id="padClr" style="width:auto">Clear</button></div></div>
+
+    <h3><span class="n">6</span>Declaration</h3>
+    <div class="row2"><div><label for="place">Place</label><input id="place" placeholder="Ludhiana"></div><div><label for="date">Date</label><input id="date"></div></div>
+
+    <h3>Design</h3>
+    <div class="tpl" id="tpl"><button type="button" data-t="" class="on">Emerald</button><button type="button" data-t="t-blue">Navy</button><button type="button" data-t="t-maroon">Maroon</button></div>
+
+    <div class="actions">
+      <button type="button" class="btn gold" id="dl">⬇️ Download PDF</button>
+      <a class="btn wa" href="apply">Apply with this CV →</a>
+      <button type="button" class="btn ghost" id="reset" style="color:var(--ink);border-color:var(--ink)">Start over</button>
+    </div>
+    <label style="display:flex;gap:8px;align-items:flex-start;font-weight:700;font-size:13.5px;margin-top:12px"><input type="checkbox" id="keep" style="width:auto;margin-top:3px"> Save my draft on this device (leave unticked on shared phones)</label>
+    <p class="priv">🔒 Your details and photos stay only in this browser on your device. Nothing is sent to KredSoft or anyone else. If "Save my draft" is unticked, everything disappears when you close the page. Tap "Start over" to erase now.</p>
+    <p class="priv"><b>To download:</b> tap "Download PDF", then choose <b>Save as PDF</b> as the printer. On some phones, use the browser menu ⋮ → <b>Share / Print</b>.</p>
+  </form>
+
+  <div class="sheetwrap"><div class="lbl">Live preview</div><div id="sheet"><div class="in" id="sheetIn"></div></div></div>
+  </div>
+</div></section>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const F=['name','role','phone','email','loc','exp','summary','skills','products','langs','notice','ctc','dob','place','date'];
+let st={jobs:[],edus:[],photo:'',sig:'',tpl:''};
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function save(){try{if(!document.getElementById('keep').checked){localStorage.removeItem('ks-resume');return}const d={...st};F.forEach(k=>d[k]=$(k).value);localStorage.setItem('ks-resume',JSON.stringify(d))}catch(e){}}
+function load(){try{const d=JSON.parse(localStorage.getItem('ks-resume')||'null');if(!d)return false;F.forEach(k=>{if(d[k]!=null)$(k).value=d[k]});st.jobs=d.jobs||[];st.edus=d.edus||[];st.photo=d.photo||'';st.sig=d.sig||'';st.tpl=d.tpl||'';return true}catch(e){return false}}
+function blockJob(j,i){return `<div class="block"><button type="button" class="x" data-del="jobs" data-i="${i}" aria-label="Remove">×</button>
+<div class="row2"><div><label>Designation</label><input data-a="jobs" data-i="${i}" data-k="title" value="${esc(j.title)}" placeholder="Relationship Officer"></div><div><label>Organisation</label><input data-a="jobs" data-i="${i}" data-k="org" value="${esc(j.org)}" placeholder="ABC Finance Ltd"></div></div>
+<div class="row2"><div><label>From – To</label><input data-a="jobs" data-i="${i}" data-k="dur" value="${esc(j.dur)}" placeholder="Jun 2022 – Present"></div><div><label>Location</label><input data-a="jobs" data-i="${i}" data-k="loc" value="${esc(j.loc)}" placeholder="Ludhiana"></div></div>
+<label>Key achievements (one per line)</label><textarea data-a="jobs" data-i="${i}" data-k="pts" placeholder="Achieved 112% of LAP disbursal target in FY25&#10;Built a network of 15 active DSAs">${esc(j.pts)}</textarea></div>`}
+function blockEdu(e,i){return `<div class="block"><button type="button" class="x" data-del="edus" data-i="${i}" aria-label="Remove">×</button>
+<div class="row2"><div><label>Qualification</label><input data-a="edus" data-i="${i}" data-k="deg" value="${esc(e.deg)}" placeholder="MBA (Finance)"></div><div><label>Institute / Board</label><input data-a="edus" data-i="${i}" data-k="ins" value="${esc(e.ins)}" placeholder="Punjabi University"></div></div>
+<div class="row2"><div><label>Year</label><input data-a="edus" data-i="${i}" data-k="yr" value="${esc(e.yr)}" placeholder="2020"></div><div><label>Score (optional)</label><input data-a="edus" data-i="${i}" data-k="sc" value="${esc(e.sc)}" placeholder="68%"></div></div></div>`}
+function drawBlocks(){$('jobs').innerHTML=st.jobs.map(blockJob).join('');$('edus').innerHTML=st.edus.map(blockEdu).join('')}
+function list(v){return (v||'').split(',').map(s=>s.trim()).filter(Boolean)}
+function render(){
+  const v=k=>esc($(k).value.trim());
+  const ph=st.photo?`<img class="ph" src="${st.photo}" alt="">`:'';
+  const contact=[v('phone')&&'📞 '+v('phone'),v('email')&&'✉️ '+v('email'),v('loc')&&'📍 '+v('loc')].filter(Boolean).map(x=>`<span>${x}</span>`).join('');
+  const tags=a=>a.map(x=>`<span>${esc(x)}</span>`).join('');
+  const jobs=st.jobs.filter(j=>j.title||j.org).map(j=>`<div class="job"><b>${esc(j.title)}</b>${j.org?' · '+esc(j.org):''}<div class="m">${esc(j.dur)}${j.loc?' · '+esc(j.loc):''}</div>${j.pts?'<ul>'+j.pts.split('\n').filter(s=>s.trim()).map(s=>'<li>'+esc(s)+'</li>').join('')+'</ul>':''}</div>`).join('')||'<div class="empty">Add your work experience</div>';
+  const edus=st.edus.filter(e=>e.deg).map(e=>`<div class="kv"><b>${esc(e.deg)}</b><br>${esc(e.ins)}${e.yr?' · '+esc(e.yr):''}${e.sc?' · '+esc(e.sc):''}</div>`).join('')||'<div class="empty">Add education</div>';
+  const pers=[['Experience',v('exp')],['Notice period',v('notice')],['Current CTC',v('ctc')],['Date of birth',v('dob')],['Languages',v('langs')]].filter(x=>x[1]).map(x=>`<div class="kv"><b>${x[0]}:</b> ${x[1]}</div>`).join('');
+  $('sheetIn').innerHTML=`<div class="cv ${st.tpl}">
+   <div class="hd">${ph}<div><div class="nm">${v('name')||'Your Name'}</div><div class="rl">${v('role')||'Your role'}</div><div class="ct">${contact}</div></div></div>
+   <div class="bd"><div class="sd">
+     <h4>Key skills</h4><div class="tags">${tags(list($('skills').value))||'<span class="empty">Add skills</span>'}</div>
+     ${list($('products').value).length?'<h4>Products</h4><div class="tags">'+tags(list($('products').value))+'</div>':''}
+     <h4>Education</h4>${edus}
+     ${pers?'<h4>Personal</h4>'+pers:''}
+   </div><div class="mn">
+     <h4>Profile</h4><div>${v('summary')||'<span class="empty">Write a 2–3 line summary</span>'}</div>
+     <h4>Experience</h4>${jobs}
+     <h4>Declaration</h4><div class="decl">I hereby declare that the information given above is true to the best of my knowledge and belief.</div>
+     <div class="sig"><div class="pl">Place: ${v('place')}<br>Date: ${v('date')}</div><div style="text-align:center">${st.sig?`<img src="${st.sig}" alt="">`:''}<div style="font-size:12px;border-top:1px solid #999;padding-top:2px;min-width:160px">${v('name')||'Signature'}</div></div></div>
+   </div></div></div>`;
+  fit();save();
+}
+function fit(){const w=$('sheet').clientWidth;$('sheetIn').style.transform=`scale(${w/794})`}
+addEventListener('resize',fit);
+document.addEventListener('input',e=>{const t=e.target;if(t.dataset.a){st[t.dataset.a][+t.dataset.i][t.dataset.k]=t.value;render()}else if(F.includes(t.id))render()});
+document.addEventListener('click',e=>{const t=e.target;if(t.dataset&&t.dataset.del){st[t.dataset.del].splice(+t.dataset.i,1);drawBlocks();render()}});
+$('addJob').onclick=()=>{st.jobs.push({title:'',org:'',dur:'',loc:'',pts:''});drawBlocks();render()};
+$('addEdu').onclick=()=>{st.edus.push({deg:'',ins:'',yr:'',sc:''});drawBlocks();render()};
+document.querySelectorAll('#tpl button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#tpl button').forEach(x=>x.classList.toggle('on',x===b));st.tpl=b.dataset.t;render()});
+function readImg(file,cb){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>cb(im);im.src=r.result};r.readAsDataURL(file)}
+function setPhoto(file){if(!file)return;readImg(file,im=>{const s=Math.min(im.width,im.height),c=document.createElement('canvas');c.width=c.height=360;c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,360,360);st.photo=c.toDataURL('image/jpeg',.85);$('phpv').innerHTML=`<img src="${st.photo}" alt="">`;render()})}
+$('phCam').onchange=e=>setPhoto(e.target.files[0]);$('phUp').onchange=e=>setPhoto(e.target.files[0]);
+$('phDel').onclick=()=>{st.photo='';$('phpv').textContent='🙂';render()};
+// scan signature: remove light background, crop to ink
+$('sgCam').onchange=e=>{const f=e.target.files[0];if(!f)return;readImg(f,im=>{
+  const sc=Math.min(1,1200/im.width),w=Math.round(im.width*sc),h=Math.round(im.height*sc);
+  const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.drawImage(im,0,0,w,h);
+  const d=x.getImageData(0,0,w,h),p=d.data;let sum=0;for(let i=0;i<p.length;i+=4)sum+=(p[i]+p[i+1]+p[i+2])/3;const avg=sum/(p.length/4),th=avg*0.72;
+  let minx=w,miny=h,maxx=0,maxy=0;
+  for(let y=0;y<h;y++)for(let xx=0;xx<w;xx++){const i=(y*w+xx)*4,l=(p[i]+p[i+1]+p[i+2])/3;
+    if(l>th){p[i+3]=0}else{p[i]=p[i+1]=p[i+2]=20;p[i+3]=255;if(xx<minx)minx=xx;if(xx>maxx)maxx=xx;if(y<miny)miny=y;if(y>maxy)maxy=y}}
+  x.putImageData(d,0,0);
+  if(maxx<=minx){alert('Signature not detected. Try again in better light.');return}
+  const pad=8,cw=maxx-minx+pad*2,ch=maxy-miny+pad*2,o=document.createElement('canvas');o.width=cw;o.height=ch;
+  o.getContext('2d').drawImage(c,minx-pad,miny-pad,cw,ch,0,0,cw,ch);setSig(o.toDataURL('image/png'))})};
+function setSig(u){st.sig=u;$('sgpv').innerHTML=u?`<img src="${u}" alt="">`:'✍️';render()}
+$('sgDel').onclick=()=>setSig('');
+// draw pad
+const pad=$('pad');let ctx,drawing=false,has=false;
+function sizePad(){const r=pad.getBoundingClientRect();pad.width=r.width*2;pad.height=r.height*2;ctx=pad.getContext('2d');ctx.scale(2,2);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111';has=false}
+function pt(e){const r=pad.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]}
+pad.addEventListener('pointerdown',e=>{drawing=true;has=true;pad.setPointerCapture(e.pointerId);const[a,b]=pt(e);ctx.beginPath();ctx.moveTo(a,b)});
+pad.addEventListener('pointermove',e=>{if(!drawing)return;const[a,b]=pt(e);ctx.lineTo(a,b);ctx.stroke()});
+addEventListener('pointerup',()=>drawing=false);
+$('sgDraw').onclick=()=>{$('padwrap').classList.add('on');sizePad();$('padwrap').scrollIntoView({block:'center',behavior:'smooth'})};
+$('padClr').onclick=sizePad;
+$('padOk').onclick=()=>{if(has)setSig(pad.toDataURL('image/png'));$('padwrap').classList.remove('on')};
+$('dl').onclick=()=>{const t=document.title;document.title=($('name').value.trim()||'Resume').replace(/\s+/g,'_')+'_CV';window.print();setTimeout(()=>document.title=t,1500)};
+$('reset').onclick=()=>{{document.getElementById('keep').checked=false;try{localStorage.removeItem('ks-resume')}catch(e){}st={jobs:[{title:'',org:'',dur:'',loc:'',pts:''}],edus:[{deg:'',ins:'',yr:'',sc:''}],photo:'',sig:'',tpl:''};F.forEach(k=>$(k).value='');$('phpv').textContent='🙂';$('sgpv').textContent='✍️';drawBlocks();render()}};
+document.getElementById('keep').addEventListener('change',save);
+const had=load();if(had)document.getElementById('keep').checked=true;
+if(!had){st.jobs=[{title:'',org:'',dur:'',loc:'',pts:''}];st.edus=[{deg:'',ins:'',yr:'',sc:''}]}
+if(!$('date').value){const d=new Date();$('date').value=String(d.getDate()).padStart(2,'0')+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+d.getFullYear()}
+if(st.photo)$('phpv').innerHTML=`<img src="${st.photo}" alt="">`;if(st.sig)$('sgpv').innerHTML=`<img src="${st.sig}" alt="">`;
+document.querySelectorAll('#tpl button').forEach(x=>x.classList.toggle('on',x.dataset.t===st.tpl));
+drawBlocks();render();
+})();
+</script>
+
+</main>
+<footer class="site"><div class="wrap">
+  <div class="fgrid">
+    <div class="fbrand"><b>KredSoft Careers</b><p>Free career hub for Banking, NBFC &amp; Insurance professionals in Punjab &amp; Haryana.</p><p>✉️ careers@kredsoftz.in · 📲 79730 01863</p></div>
+    <div><h4>Programs</h4><a href="learn#banking">Banking basics</a><a href="learn#loans">Loans &amp; credit</a><a href="learn#insurance">Insurance &amp; wealth</a><a href="learn#careers">Career scope</a></div>
+    <div><h4>Company</h4><a href="./#about">About us</a><a href="./#upcoming">Our vision</a><a href="mailto:careers@kredsoftz.in?subject=Hiring%20partnership">Partner with us / Hire talent</a><a href="resume">Resume builder</a></div>
+    <div><h4>Support</h4><a href="./#faq">FAQ</a><a href="mailto:careers@kredsoftz.in">Contact us</a><a href="privacy">Privacy Policy</a><a href="terms">Terms of Use</a></div>
+  </div>
+  <div class="fbottom"><span>© <span class="yr">2026</span> KredSoft Careers · A <a href="https://kredsoftz.in">Kredsoftz</a> venture</span><span>We never charge candidates any fee.</span></div>
+</div></footer>
+<div class="scrollnav" aria-label="Page scroll"><button type="button" id="toTop" aria-label="Scroll to top">&#9650;</button><button type="button" id="toBottom" aria-label="Scroll to bottom">&#9660;</button></div>
+<script>
+(function(){var up=document.getElementById('toTop'),dn=document.getElementById('toBottom');
+function u(){var y=scrollY,m=document.documentElement.scrollHeight-innerHeight;up.classList.toggle('hide',y<300);dn.classList.toggle('hide',y>m-300)}
+up.onclick=function(){scrollTo({top:0,behavior:'smooth'})};dn.onclick=function(){scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})};
+addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();
+document.querySelectorAll('.yr').forEach(function(e){e.textContent=new Date().getFullYear()})})();
+</script>
+</body>
+</html>
